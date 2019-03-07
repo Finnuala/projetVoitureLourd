@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\preview\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="16.0">
+ <Targets>
+  <Target Name="C:\Users\Basti\source\repos\MvvmLight1\MvvmLight1\bin\Debug\MvvmLight1.exe">
+   <Modules>
+    <Module Name="mvvmlight1.exe">
+     <Namespaces>
+      <Namespace Name="MvvmLight1">
+       <Types>
+        <Type Name="DataSet1" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2019-03-06 08:46:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Ajoutez une implémentation de GetObjectData au type 'DataSet1'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="DataSet1+loginDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2019-03-06 08:46:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Ajoutez une implémentation de GetObjectData au type 'DataSet1.loginDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="DataSet1+typecarburantDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2019-03-06 08:46:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Ajoutez une implémentation de GetObjectData au type 'DataSet1.typecarburantDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="DataSet2" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2019-03-06 08:46:41Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Ajoutez une implémentation de GetObjectData au type 'DataSet2'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="MvvmLight1.Data">
+       <Types>
+        <Type Name="MySQL" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2019-03-06 08:46:41Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">Implémenter IDisposable sur 'MySQL' car il crée des membres des types IDisposable suivants : 'MySqlConnection'. Si 'MySQL' existait précédemment, le fait d'ajouter de nouveaux membres qui implémentent IDisposable pour ce type est considéré comme une modification avec rupture pour les utilisateurs existants.</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#ExecuteQuery(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-03-06 08:46:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Basti\source\repos\MvvmLight1\MvvmLight1\Data" File="MySQL.cs" Line="86">'MySQL.ExecuteQuery(string)' lève à nouveau une exception interceptée et la spécifie de manière explicite en tant qu'argument. Utilisez 'throw' sans argument à la place, afin de conserver l'emplacement de la pile où l'exception à été levée pour la première fois.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2019-03-06 08:46:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Basti\source\repos\MvvmLight1\MvvmLight1\Data" File="MySQL.cs" Line="82">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'MySQL.ExecuteQuery(string)' could contain the following variables 'query'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ReaderQuery(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2019-03-06 08:46:41Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Users\Basti\source\repos\MvvmLight1\MvvmLight1\Data" File="MySQL.cs" Line="62">'MySQL.ReaderQuery(string)' lève à nouveau une exception interceptée et la spécifie de manière explicite en tant qu'argument. Utilisez 'throw' sans argument à la place, afin de conserver l'emplacement de la pile où l'exception à été levée pour la première fois.</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2019-03-06 08:46:41Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="C:\Users\Basti\source\repos\MvvmLight1\MvvmLight1\Data" File="MySQL.cs" Line="58">The query string passed to 'MySqlCommand.MySqlCommand(string, MySqlConnection)' in 'MySQL.ReaderQuery(string)' could contain the following variables 'query'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240">
+   <Name>Implémentez ISerializable comme il se doit</Name>
+   <Description>Si un type peut être assigné à ISerializable, il doit implémenter GetObjectData. Pour les types unsealed, la méthode GetObjectData doit pouvoir être appelée et remplacée par des types dérivés.</Description>
+   <Resolution Name="Default">Ajoutez une implémentation de GetObjectData au type {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182342.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="60">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="16.0.0.0" />
+  </Rule>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Levez à nouveau une exception pour conserver les détails de la pile</Name>
+   <Description>Utilisez l'instruction de levée IL pour conserver les détails d'origine de la pile lorsque vous levez à nouveau une exception interceptée.</Description>
+   <Resolution Name="Default">{0} lève à nouveau une exception interceptée et la spécifie de manière explicite en tant qu'argument. Utilisez 'throw' sans argument à la place, afin de conserver l'emplacement de la pile où l'exception à été levée pour la première fois.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182363.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="16.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310.aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="16.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>Les types qui possèdent des champs supprimables doivent être supprimables</Name>
+   <Description>Les types qui déclarent des membres supprimables doivent également implémenter IDisposable. Si le type ne possède aucune ressource non managée, n'implémentez pas de finaliseur sur celui-ci.</Description>
+   <Resolution Name="DependsOnFix">Implémenter IDisposable sur {0} car il crée des membres des types IDisposable suivants : {1}. Si {0} existait précédemment, le fait d'ajouter de nouveaux membres qui implémentent IDisposable pour ce type est considéré comme une modification avec rupture pour les utilisateurs existants.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172.aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="16.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Catégorie</String>
+  <String Key="Certainty">Certitude</String>
+  <String Key="CollapseAll">Réduire tout</String>
+  <String Key="CheckId">ID de contrôle</String>
+  <String Key="Error">Erreur</String>
+  <String Key="Errors">erreur(s)</String>
+  <String Key="ExpandAll">Développer tout</String>
+  <String Key="Help">Aide</String>
+  <String Key="Line">Ligne</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Emplacement non stocké dans le fichier Pdb]</String>
+  <String Key="Project">Projet</String>
+  <String Key="Resolution">Résolution</String>
+  <String Key="Rule">Règle</String>
+  <String Key="RuleFile">Fichier de règles</String>
+  <String Key="RuleDescription">Description de la règle</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">État</String>
+  <String Key="Target">Cible</String>
+  <String Key="Warning">Avertissement</String>
+  <String Key="Warnings">avertissement(s)</String>
+  <String Key="ReportTitle">Rapport d'analyse du code</String>
+ </Localized>
+</FxCopReport>

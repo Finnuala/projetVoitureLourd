@@ -1,0 +1,49 @@
+﻿<Window x:Class="MvvmLight1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.ch/ignore"
+        mc:Ignorable="d ignore"
+        Height="450"
+        Width="800"
+        Title="Projet voiture - Connexion"
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" VerticalAlignment="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="Nom d'utilisateur:" Grid.Column="0" HorizontalAlignment="Right" VerticalAlignment="Center"></TextBlock>
+            <Border Grid.Row="0" Grid.Column="1" Height="22" Width="200" BorderThickness="1" BorderBrush="DarkGray" DockPanel.Dock="Top" Margin="0,0,0,5">
+                <TextBox></TextBox>
+            </Border>
+            <TextBlock Text="Mot de passe:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"></TextBlock>
+            <Border Grid.Row="1" Grid.Column="1" Height="22" Width="200" BorderThickness="1" BorderBrush="DarkGray" DockPanel.Dock="Top" Margin="0,5,0,0">
+                <PasswordBox></PasswordBox>
+            </Border>
+            <Button Grid.Row="2" Grid.Column="1" Height="20" Width="200" Margin="0,10,0,5" Command="{Binding ConnexionButtonCommand}">Connexion</Button>
+        </Grid>
+    </Grid>
+</Window>

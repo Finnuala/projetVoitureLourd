@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="selectcarConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="selectcarConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MvvmLight1.Properties.Settings.GlobalReference.Default.selectcarConnectionString" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="selectcarConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="selectcarConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MvvmLight1.Properties.Settings.GlobalReference.Default.selectcarConnectionString1" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="selectcarConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="selectcarConnectionString2 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.MvvmLight1.Properties.Settings.GlobalReference.Default.selectcarConnectionString2" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="loginTableAdapter" GeneratorDataComponentClassName="loginTableAdapter" Name="login" UserDataComponentName="loginTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="selectcarConnectionString1 (Settings)" DbObjectName="selectcar.login" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT id_login, user_login, pass_login
+FROM     login</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="typecarburantTableAdapter" GeneratorDataComponentClassName="typecarburantTableAdapter" Name="typecarburant" UserDataComponentName="typecarburantTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="selectcarConnectionString2 (Settings)" DbObjectName="selectcar.typecarburant" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT id_type_carburant, libelle
+FROM     typecarburant</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="login" msprop:Generator_TableClassName="loginDataTable" msprop:Generator_TableVarName="tablelogin" msprop:Generator_RowChangedName="loginRowChanged" msprop:Generator_TablePropName="login" msprop:Generator_RowDeletingName="loginRowDeleting" msprop:Generator_RowChangingName="loginRowChanging" msprop:Generator_RowEvHandlerName="loginRowChangeEventHandler" msprop:Generator_RowDeletedName="loginRowDeleted" msprop:Generator_RowClassName="loginRow" msprop:Generator_UserTableName="login" msprop:Generator_RowEvArgName="loginRowChangeEvent">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="typecarburant" msprop:Generator_TableClassName="typecarburantDataTable" msprop:Generator_TableVarName="tabletypecarburant" msprop:Generator_TablePropName="typecarburant" msprop:Generator_RowDeletingName="typecarburantRowDeleting" msprop:Generator_RowChangingName="typecarburantRowChanging" msprop:Generator_RowEvHandlerName="typecarburantRowChangeEventHandler" msprop:Generator_RowDeletedName="typecarburantRowDeleted" msprop:Generator_UserTableName="typecarburant" msprop:Generator_RowChangedName="typecarburantRowChanged" msprop:Generator_RowEvArgName="typecarburantRowChangeEvent" msprop:Generator_RowClassName="typecarburantRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
